@@ -1,0 +1,91 @@
+.c {
+	font-family:"Comic Sans MS";
+}
+
+body {
+	text-align:center;
+	font-family:"Comic Sans MS";
+}
+
+div#common {
+	text-align:center;
+	float:left;
+	width:50%;
+	background-color:red;
+	height:420em;
+}
+
+div#buy {
+	text-align:center;
+	float:right;
+	width:50%;
+	background-color:blue;
+	height:420em;
+}
+
+div#settings {
+	z-index:1000;
+	position:fixed;
+	width:25%;
+	height:50%;
+	margin:5% auto;
+	left:0;
+	right:0;
+	background-color:orange;
+}
+
+.settingTxt {
+	font-size:18px;
+}
+
+.settingTxtTit {
+	font-size:21px;
+	font-style:underline;
+	font-weight:bold;
+}
+
+ul {
+	list-style-type:none;
+}
+
+h1.title {
+	font-style:underline;
+	font-weight:bold;
+}
+
+#submit {
+
+}
+
+#undo {
+
+}
+
+#delete {
+	z-index:1001;
+	left:8px;
+	position:fixed;
+}
+
+#help {
+
+}
+
+#settingsBut {
+	z-index:1001;
+	position:fixed;
+	width:70px;
+	right:8px; 
+}
+
+input#uInput {
+
+}
+
+.hoverDelete {
+	width:20px;
+	z-index:3;
+	
+}
+
+

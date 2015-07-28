@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Grocery List</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<!--THE SPAN WITH THE CLASS 'C' IS MAKING EVERYTHING IN IT COMIC SANS-->
+	<audio src="sounds/happyBoing.mp3" id="happyBoing"></audio>
+	<audio src="sounds/sadBoing.mp3" id="sadBoing"></audio>
+	<audio src="sounds/" id=""></audio>
+	<audio src="sounds/" id=""></audio>
+
+	<div id="settings">
+		<button id="noise"><span class="c">Toggle Sounds</span></button>
+		<p id="stateOfSound">Sound is on.</p>
+		<button id="help"><span class="c">Toggle Help Mode</span></button>
+		<p id="stateOfHelp">Help Mode is off.</p>
+		<div id="commonSettings">
+			<div id="comColors">
+				<p class="settingTxtTit">What background color would you like?</p>
+				<p class="settingTxt">Common</p>
+					<button id="comBlue"><span class="c">Blue</span></button>
+					<button id="comRed"><span class="c">Red</span></button>
+					<button id="comGreen"<span class="c">Green</button></button>
+			</div>
+		</div>
+		<div id="buySettings">
+			<div id="buyColors">
+				<p class="settingTxt">To Buy</p>
+					<button id="buyBlue"><span class="c">Blue</span></button>
+					<button id="buyRed"><span class="c">Red</span></button>
+					<button id="buyGreen"><span class="c">Green</span></button>
+			</div>
+		</div>
+	</div>
+
+	<div id="common">
+		<button id="delete"><span class="c">Delete Mode</span></button>
+		<h1 class="title">Commonly Used Items</h1>
+		<input type="text" id="uInput" placeholder="Type what you commonly buy here.">
+		<button id="submit"><span class="c">Submit</span></button>
+		<ul id="submittedItems"></ul>
+	</div>
+
+	<div id="buy">
+		<button id="settingsBut"><span class="c">Settings</span></button>
+		<h1 class="title">Items to Buy</h1>
+		<button id="undo"><span class="c">UNDO</span></button>
+		<ul id="itemsToBuy"><li>hi</li></ul>
+	</div>
+
+	<!--Jquery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
+	<!--Pubnub-->
+	<script src="https://cdn.pubnub.com/pubnub-dev.js"></script>
+	<script src="https://cdn.pubnub.com/pubnub.min.js"></script>
+	<!--My Code-->
+	<script src="script.js"></script>
+
+
+	<!--PUBNUB-->
+	<script src="pubnub.js"></script>
+
+</body>
+<html>
