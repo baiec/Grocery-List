@@ -10,6 +10,8 @@ $(document).ready(function(){
 	console.log("document loaded");
 	settingsDiv.hide();
 	console.log("settingsDiv hidden");
+
+	//tests
 });
 //assining ids to variables
 //divs
@@ -38,8 +40,12 @@ var sadBoing = document.getElementById("sadBoing");
 //lists
 var common = $("#submittedItems");
 var toBuy = $("#itemsToBuy");
-//undo array
+//list items
+var commonItems = $(".commonItems");
+var itemsToBuy = $("#itemsToBuy");
+//arrays
 var undoArray = [];
+var publishArray = [];
 //toggle modes
 var delMode = false;
 var helpMode = false;
@@ -50,14 +56,17 @@ var stateOfSound = $("#stateOfSound");
 console.log("variables assigned");
 //functions for handling changes
 function handleCommonChange(change){
-	//common.replaceWith(change.list);
-	alert(change.list);
-}
+	//common.replaceWith(change);
+	//alert(change.list);
+	//common.prepend("<li class='commonItem'>"+change.list+"</li>");
+	//common.remove();
+	commonDiv.replaceWith(change);
 
+}
 function handleBuyChange(change){
 	toBuy.replaceWith(change.list);
 }
-//submitting items is on the pubnub file
+
 input.keydown(function(key){
 	if(key.which == 13){
 		console.log("enter key pressed on input box");
@@ -71,18 +80,20 @@ submit.click(function(){
 		common.prepend("<li class='commonItem'>"+input.val()+"</li>");
 		input.val("");
 		console.log("prepended input and cleared it");
+
+		publishArray.push(commonItems.each().html());
+		alertArrayElements(publishArray);
+
 		pubnub.publish({
 			channel: 'common',
-			message: {
-				list: 'hi'
-			}
+			message: common
 		});
 		console.log("list published on channel common");
 	}
 });
 
 //clicking common item (dynam)
-$(document).on('click','.commonItem',function(){
+common.on('click','.commonItem',function(){
 	console.log("common item clicked");
 	if(!delMode){
 		var item = $(this).clone();
@@ -102,7 +113,7 @@ $(document).on('click','.commonItem',function(){
 });
 
 //clicking item to buy (dynam)
-$(document).on('click','.itemToBuy',function(){
+toBuy.on('click','.itemToBuy',function(){
 	console.log("to buy item was clicked");
 
 	undoArray.push(this);
@@ -223,3 +234,9 @@ pubnub.subscribe({
 	channel: 'common',
 	message: handleCommonChange
 });
+
+function alertArrayElements(array){
+	for(var i=0;i<array.length;i++){
+		alert(array[i]);
+	}
+}
